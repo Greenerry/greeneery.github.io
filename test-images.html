@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body { background: #222; color: white; padding: 20px; }
+        img { max-width: 200px; margin: 10px; border: 2px solid #555; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    <p>Check if all images load properly:</p>
+    
+    <div>
+        <h3>Main Images:</h3>
+        <img src="images/Image+1.jpg" alt="Image 1" onerror="this.classList.add('error'); this.alt='FAILED: Image+1.jpg'">
+        <img src="images/Image+2.jpg" alt="Image 2" onerror="this.classList.add('error'); this.alt='FAILED: Image+2.jpg'">
+        <img src="images/Image+3.jpg" alt="Image 3" onerror="this.classList.add('error'); this.alt='FAILED: Image+3.jpg'">
+        <img src="images/Image+4.png" alt="Image 4" onerror="this.classList.add('error'); this.alt='FAILED: Image+4.png'">
+        <img src="images/Image+5.png" alt="Image 5" onerror="this.classList.add('error'); this.alt='FAILED: Image+5.png'">
+    </div>
+    
+    <div>
+        <h3>Detail Images:</h3>
+        <img src="images/school.jpg" alt="School" onerror="this.classList.add('error'); this.alt='FAILED: school.jpg'">
+        <img src="images/music.jpg" alt="Music" onerror="this.classList.add('error'); this.alt='FAILED: music.jpg'">
+        <img src="images/comp.jpg" alt="Computer" onerror="this.classList.add('error'); this.alt='FAILED: comp.jpg'">
+        <img src="images/wok.jpg" alt="Work" onerror="this.classList.add('error'); this.alt='FAILED: wok.jpg'">
+        <img src="images/touch.jpg" alt="Contact" onerror="this.classList.add('error'); this.alt='FAILED: touch.jpg'">
+    </div>
+    
+    <div>
+        <h3>Logo Images:</h3>
+        <img src="images/SoundCloud.jpg" alt="SoundCloud" onerror="this.classList.add('error'); this.alt='FAILED: SoundCloud.jpg'">
+        <img src="images/Vinted Black icon.jpg" alt="Vinted" onerror="this.classList.add('error'); this.alt='FAILED: Vinted Black icon.jpg'">
+        <img src="images/INSTAGRAM APP ICON - BLACK.jpg" alt="Instagram" onerror="this.classList.add('error'); this.alt='FAILED: INSTAGRAM APP ICON - BLACK.jpg'">
+    </div>
+    
+    <script>
+        console.log('Testing image loading...');
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('load', () => console.log('Loaded:', img.src));
+            img.addEventListener('error', () => console.error('Failed:', img.src));
+        });
+    </script>
+</body>
+</html>
